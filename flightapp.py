@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as feature
 
+from io import BytesIO# to process any input , output
+
 
 cities ={
     'New York': [40.7128, -74.0059],
@@ -62,3 +64,15 @@ if st.button("GENERATE"):
         plt.title(f'Flight Path Between {city1} and {city2}')
 
         st.pyplot(fig)
+
+
+        img_load=BytesIO()
+        fig.savefig(img_load,format='png')
+
+
+        st.download_button(
+             label='download',
+            data=img_load,
+            file_name=  f'Flight Path Between {city1} and {city2}.png',
+            mime='image/png'
+        )
