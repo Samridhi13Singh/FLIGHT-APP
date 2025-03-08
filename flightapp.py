@@ -14,7 +14,19 @@ cities ={
     'Paris' : [48.8566,2.3522 ],
     'Moscow' : [55.7558,37.6173],
     'Mumbai' : [ 19.0760,72.8777],
-    'Queenstown':[-45.0312,168.6626]
+    'Queenstown':[-45.0312,168.6626],
+    "Los Angeles": (34.0522, -118.2437),
+     "Beijing": (39.9042, 116.4074),
+    " Nairobi": (-1.2864, 36.8172),
+    "Toronto": (43.6511, -79.3470),
+    "Buenos Aires": (-34.6037, -58.3816),
+    "Berlin": (52.5200, 13.4050),
+    "Jakarta": (-6.2088, 106.8456),
+    "Madrid": (40.4168, -3.7038),
+    "Bangkok": (13.7563, 100.5018),
+    "Kuala Lumpur": (3.139, 101.6869),
+    "Lisbon": (38.7223, -9.1393),
+    "Cairo": (30.0444, 31.2357)
 }
 
 st.title('Flight Path Between Ci✈️ies')
@@ -31,7 +43,7 @@ if st.button("GENERATE"):
 
         lat1,lon1 = cities[city1]
         lat2,lon2 =cities[city2]
-        fig =plt.figure(figsize=(17,10))
+        fig =plt.figure(figsize=(20,20))
         ax=fig.add_subplot(1,1,1,projection=ccrs.PlateCarree())
 
         ax.set_extent([-180,180,-90,90],crs=ccrs.PlateCarree())
